@@ -10,6 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist'
   },
+  devtool: 'source-map',
   module: {
     rules: [{
       test: /\.js$/,
@@ -18,21 +19,46 @@ module.exports = {
     },
     {
       test: /\.scss$/,
-      loader: [
+      use: [
         'style-loader',
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: { sourceMap: true }
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            config:
+            { path: 'postcss.config.js' }
+          }
         },
         {
           loader: 'sass-loader',
-          options: { sourceMap: true }
-        }]
-    },
-    {
-      test: /\.css$/,
-      loader: [MiniCssExtractPlugin.loader, 'css-loader']
+          options: {
+            sourceMap: true
+          }
+        }
+      ]
+      // loader: [
+      //   'style-loader',
+      // MiniCssExtractPlugin.loader,
+      //   {
+      //     loader: 'css-loader',
+      //     options: { sourceMap: true }
+      //   },
+      //   {
+      //     loader: 'postcss-loader',
+      //     options: { sourceMap: true, config: { path: 'postcss.config.js' } }
+      //   },
+      //   {
+      //     loader: 'sass-loader',
+      //     options: { sourceMap: true }
+      //   }
+      // ]
     }]
   },
   devServer: {
