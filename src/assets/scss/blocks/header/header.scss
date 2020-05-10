@@ -12,14 +12,13 @@
   width: 140px;
   height: 36px;
 
-  font-size: 13px;
+  font-weight: $fontWeightL;
   line-height: 36px;
-  font-family: $baseFont;
-  font-weight: $fontWeightM;
   text-align: center;
-  color: #ffffff;
+
+  color: $baseFontColor;
   letter-spacing: 0;
 
   background-color: $baseColor;
-  border-radius: 4px;
+  border-radius: $borderRadiusM;
 }

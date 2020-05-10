@@ -1,0 +1,49 @@
+.timeline {
+  border-bottom: $baseBorder;
+
+  &__stamps {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    padding-left: 245px;
+  }
+
+  &__stamp {
+    position: relative;
+
+    width: 49px;
+    height: 20px;
+
+    font-weight: $fontWeightXL;
+    font-size: $fontSizeS;
+    line-height: 20px;
+    text-align: center;
+    color: $subFontColor;
+
+    &:not(:last-of-type) {
+      margin-right: 17px;
+    }
+
+    &--inactive {
+      color: $inactiveFontColor;
+    }
+
+    &--active {
+      color: $baseFontColor;
+
+      background-color: $baseColor;
+      border-radius: $borderRadiusXL;
+      &::before {
+        content: "";
+        position: absolute;
+        left: calc(50% - 1px);
+        top: 20px;
+
+        width: 1px;
+        height: calc(100vh - 118px);
+
+        background-color: $baseColor;
+      }
+    }
+  }
+}
