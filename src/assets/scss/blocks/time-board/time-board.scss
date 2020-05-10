@@ -1,0 +1,13 @@
+.time-board {
+  position: relative;
+
+  display: flex;
+
+  // display: grid;
+  // grid-template-columns: repeat(15, 65px);
+  // grid-auto-rows: 28px;
+  // row-gap: 24px;
+  flex: 1;
+
+  background-color: #f6f7f9;
+}

@@ -1,0 +1,81 @@
+.room-table {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 245px;
+  padding: 46px 0;
+
+  background-color: $blankColor;
+  border-right: $baseBorder;
+}
+
+.room {
+  position: relative;
+  z-index: 2;
+
+  &:not(:first-of-type) {
+    margin-top: 16px;
+  }
+
+  &__info {
+    padding: 0 24px;
+
+    color: $activeFontColor;
+
+    background-color: $blankColor;
+  }
+
+  &__name {
+    font-weight: $fontWeightL;
+    font-size: $fontSizeL;
+    line-height: 17px;
+  }
+
+  &__capacity {
+    margin-top: 2px;
+
+    line-height: 17px;
+  }
+
+  &__meetups {
+    position: absolute;
+    top: calc(50% - 28px / 2);
+    left: calc(100% + ((100vw - 244px) / 16) / 2);
+    z-index: -1;
+
+    width: calc(100vw - 244px);
+    min-width: 990px;
+    height: 28px;
+
+    background-color: red;
+
+    // background-color: $blankColor;
+    cursor: pointer;
+  }
+
+  &__meetup {
+    height: 100%;
+
+    background-color: #d5dfe9;
+
+    &:hover {
+      background-color: #99a9b9;
+    }
+  }
+
+  &--inactive {
+    .room__info {
+      color: $inactiveFontColor;
+    }
+  }
+}
+
+// TODO: Отрефакторить верстку, разнести по папкам
+.room-lines {
+  display: grid;
+  width: calc(100vw - 245px);
+  min-width: 1040px;
+  grid-template-columns: 0.5fr repeat(15, 1fr) 0.5fr;
+}
