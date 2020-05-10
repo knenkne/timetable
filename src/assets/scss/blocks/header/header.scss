@@ -1,0 +1,25 @@
+.site__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+
+  border-bottom: $baseBorder;
+}
+
+.create-meetup-link {
+  display: block;
+  width: 140px;
+  height: 36px;
+
+  font-size: 13px;
+  line-height: 36px;
+  font-family: $baseFont;
+  font-weight: $fontWeightM;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: 0;
+
+  background-color: $baseColor;
+  border-radius: 4px;
+}

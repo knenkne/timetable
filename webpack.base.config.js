@@ -35,6 +35,13 @@ module.exports = {
       }
     },
     {
+      test: /\.(woff)$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+      }
+    },
+    {
       test: /\.scss$/,
       use: [
         'style-loader',
@@ -75,8 +82,12 @@ module.exports = {
     }),
     new CopyPlugin([
       {
-        from: `${PATHS.src}/img`,
+        from: `${PATHS.src}/${PATHS.assets}img`,
         to: `${PATHS.assets}img`
+      },
+      {
+        from: `${PATHS.src}/${PATHS.assets}fonts`,
+        to: `${PATHS.assets}fonts`
       }
     ])
   ]
