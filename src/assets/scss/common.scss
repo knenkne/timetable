@@ -3,7 +3,9 @@
 }
 
 body {
-  min-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  min-width: 1285px;
   min-height: 100vh;
 
   font-weight: $fontWeightM;

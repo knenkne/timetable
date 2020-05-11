@@ -1,31 +1,49 @@
 .room-table {
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 15;
-
+  flex: 0 0 245px;
   box-sizing: border-box;
-  width: 245px;
-  padding: 46px 0;
+  padding: 46px 24px;
 
   background-color: $blankColor;
   border-right: $baseBorder;
+
+  &--float {
+    position: sticky;
+    left: 0;
+
+    background-color: transparent;
+    border-color: transparent;
+
+    .room {
+      &:not(:first-of-type) {
+        margin-top: 12px;
+      }
+    }
+
+    .room__capacity {
+      visibility: hidden;
+    }
+
+    .room__name {
+      padding: 6px 8px;
+
+      background-color: $blankColor;
+      border-radius: 4px;
+      box-shadow: 0 1px 8px 0 rgba(0, 44, 92, 0.28);
+    }
+  }
 }
 
 .room {
-  position: relative;
-  z-index: 2;
-
   &:not(:first-of-type) {
     margin-top: 20px;
   }
 
   &__info {
-    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
     color: $activeFontColor;
-
-    background-color: $blankColor;
   }
 
   &__name {
@@ -41,32 +59,6 @@
     line-height: 17px;
   }
 
-  &__meetups {
-    position: absolute;
-    top: calc(50% - 28px / 2);
-    left: calc(100% + ((100vw - 244px) / 16) / 2);
-    z-index: -1;
-
-    width: calc(100vw - 244px);
-    min-width: 990px;
-    height: 28px;
-
-    background-color: red;
-
-    // background-color: $blankColor;
-    cursor: pointer;
-  }
-
-  &__meetup {
-    height: 100%;
-
-    background-color: #d5dfe9;
-
-    &:hover {
-      background-color: #99a9b9;
-    }
-  }
-
   &--inactive {
     .room__info {
       color: $inactiveFontColor;
@@ -77,15 +69,14 @@
 // TODO: Отрефакторить верстку, разнести по папкам
 .room-lines {
   display: grid;
-  width: calc(100vw - 245px);
-  min-width: 1040px;
+  flex: 1;
   padding-top: 46px;
 
   cursor: pointer;
 
   grid-auto-rows: 36px;
   grid-gap: 24px 0;
-  grid-template-columns: 0.5fr repeat(15, 1fr) 0.5fr;
+  grid-template-columns: 0.5fr repeat(15, minmax(65px, 1fr)) 0.5fr;
 
   .room-line {
     display: grid;
