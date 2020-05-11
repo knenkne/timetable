@@ -72,8 +72,6 @@
   flex: 1;
   padding-top: 46px;
 
-  cursor: pointer;
-
   grid-auto-rows: 36px;
   grid-gap: 24px 0;
   grid-template-columns: 0.5fr repeat(15, minmax(65px, 1fr)) 0.5fr;
@@ -81,25 +79,68 @@
   .room-line {
     display: grid;
 
-    background-color: #ffffff;
+    cursor: pointer;
+    background-color: $blankColor;
 
     grid-column: 2/-2;
-    grid-template-columns: repeat(60, 0.25fr);
-
-    .hour-15 {
-      background-color: #d5dfe9;
-
-      grid-column: 1/-1;
-    }
-
-    .hour {
-      background-color: #d5dfe9;
-
-      grid-column: 1/5;
-    }
+    grid-template-columns: repeat(15, 1fr);
 
     // &:nth-of-type(2) {
     //   background-color: #d5dfe9;
     // }
+  }
+
+  .room-slot {
+    &--1h {
+      grid-column: span 1;
+    }
+
+    &--2h {
+      grid-column: span 2;
+    }
+
+    &--3h {
+      grid-column: span 3;
+    }
+
+    &--empty {
+      position: relative;
+      background-color: $blankColor;
+      border-radius: 2px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 2px;
+        background-color: #fff;
+        left: calc(50% - 6px);
+        top: calc(50% - 1px);
+        border-radius: 2px;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 12px;
+        background-color: #fff;
+        left: calc(50% - 1px);
+        top: calc(50% - 6px);
+        border-radius: 2px;
+      }
+
+      &:hover {
+        background-color: #1d54fe;
+      }
+    }
+
+    &--reserved {
+      background-color: #d5dfe9;
+
+      &:hover {
+        background-color: #99a9b9;
+      }
+    }
   }
 }
