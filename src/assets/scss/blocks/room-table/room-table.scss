@@ -9,6 +9,7 @@
   &--float {
     position: sticky;
     left: 0;
+    z-index: 1;
 
     background-color: transparent;
     border-color: transparent;
@@ -83,24 +84,56 @@
     background-color: $blankColor;
 
     grid-column: 2/-2;
-    grid-template-columns: repeat(15, 1fr);
-
-    // &:nth-of-type(2) {
-    //   background-color: #d5dfe9;
-    // }
+    grid-template-columns: repeat(60, 0.25fr);
   }
 
+  // TODO: mixin
   .room-slot {
-    &--1h {
+    &--0h15m {
       grid-column: span 1;
     }
 
-    &--2h {
+    &--0h30m {
       grid-column: span 2;
     }
 
-    &--3h {
+    &--0h45m {
       grid-column: span 3;
+    }
+
+    &--1h0m {
+      grid-column: span 4;
+    }
+
+    &--1h15m {
+      grid-column: span 5;
+    }
+
+    &--1h30m {
+      grid-column: span 6;
+    }
+
+    &--1h45m {
+      grid-column: span 7;
+    }
+
+    &--2h0m {
+      grid-column: span 8;
+    }
+
+    &--2h15m {
+      grid-column: span 9;
+    }
+
+    &--2h30m {
+      grid-column: span 10;
+    }
+    &--2h45m {
+      grid-column: span 11;
+    }
+
+    &--3h0m {
+      grid-column: span 12;
     }
 
     &--empty {
