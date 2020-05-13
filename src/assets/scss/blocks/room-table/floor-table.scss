@@ -1,0 +1,7 @@
+.floor-table {
+  &__room {
+    &:not(:first-of-type) {
+      margin-top: 16px;
+    }
+  }
+}

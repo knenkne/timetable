@@ -1,0 +1,12 @@
+.floor {
+  &__name {
+    margin-bottom: 8px;
+
+    font-weight: 800;
+    font-size: $fontSizeS;
+    line-height: 13px;
+    color: #858e98;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+}

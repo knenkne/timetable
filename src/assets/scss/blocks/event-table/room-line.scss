@@ -1,0 +1,110 @@
+.room-line {
+  display: grid;
+
+  background-color: $blankColor;
+  cursor: pointer;
+
+  grid-column: 2/-2;
+  grid-template-columns: repeat(60, 0.25fr);
+
+  &__slot {
+    transition: 0.3s;
+
+    &--0h15m {
+      grid-column: span 1;
+    }
+
+    &--0h30m {
+      grid-column: span 2;
+    }
+
+    &--0h45m {
+      grid-column: span 3;
+    }
+
+    &--1h0m {
+      grid-column: span 4;
+    }
+
+    &--1h15m {
+      grid-column: span 5;
+    }
+
+    &--1h30m {
+      grid-column: span 6;
+    }
+
+    &--1h45m {
+      grid-column: span 7;
+    }
+
+    &--2h0m {
+      grid-column: span 8;
+    }
+
+    &--2h15m {
+      grid-column: span 9;
+    }
+
+    &--2h30m {
+      grid-column: span 10;
+    }
+
+    &--2h45m {
+      grid-column: span 11;
+    }
+
+    &--3h0m {
+      grid-column: span 12;
+    }
+
+    &--empty {
+      position: relative;
+
+      background-color: $blankColor;
+      border-radius: 2px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 1px);
+        left: calc(50% - 6px);
+
+        width: 12px;
+        height: 2px;
+
+        background-color: #ffffff;
+        border-radius: 2px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 6px);
+        left: calc(50% - 1px);
+
+        width: 2px;
+        height: 12px;
+
+        background-color: #ffffff;
+        border-radius: 2px;
+      }
+
+      &:hover {
+        background-color: #1d54fe;
+
+        transition: 0.3s;
+      }
+    }
+
+    &--reserved {
+      background-color: #d5dfe9;
+
+      &:hover {
+        background-color: #99a9b9;
+
+        transition: 0.3s;
+      }
+    }
+  }
+}

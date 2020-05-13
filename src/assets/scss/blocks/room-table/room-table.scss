@@ -1,7 +1,11 @@
+@import "./floor.scss";
+@import "./floor-table.scss";
+@import "./room.scss";
+
 .room-table {
   flex: 0 0 245px;
   box-sizing: border-box;
-  padding: 46px 24px;
+  padding: 21px 24px;
 
   background-color: $blankColor;
   border-right: $baseBorder;
@@ -14,166 +18,36 @@
     background-color: transparent;
     border-color: transparent;
 
-    .room {
-      &:not(:first-of-type) {
-        margin-top: 12px;
-      }
+    .room-table__floor:not(:first-of-type) {
+      margin-top: 12px;
     }
 
-    .room__capacity {
+    .floor-table__room:not(:first-of-type) {
+      margin-top: 4px;
+    }
+
+    .floor__name {
       visibility: hidden;
     }
 
-    .room__name {
-      padding: 6px 8px;
-
-      background-color: $blankColor;
-      border-radius: 4px;
-      box-shadow: 0 1px 8px 0 rgba(0, 44, 92, 0.28);
-    }
-  }
-}
-
-.room {
-  &:not(:first-of-type) {
-    margin-top: 20px;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    color: $activeFontColor;
-  }
-
-  &__name {
-    font-weight: $fontWeightL;
-    font-size: $fontSizeL;
-    line-height: 17px;
-  }
-
-  &__capacity {
-    display: block;
-    margin-top: 2px;
-
-    line-height: 17px;
-  }
-
-  &--inactive {
-    .room__info {
-      color: $inactiveFontColor;
-    }
-  }
-}
-
-// TODO: Отрефакторить верстку, разнести по папкам
-.room-lines {
-  display: grid;
-  flex: 1;
-  padding-top: 46px;
-
-  grid-auto-rows: 36px;
-  grid-gap: 24px 0;
-  grid-template-columns: 0.5fr repeat(15, minmax(65px, 1fr)) 0.5fr;
-
-  .room-line {
-    display: grid;
-
-    cursor: pointer;
-    background-color: $blankColor;
-
-    grid-column: 2/-2;
-    grid-template-columns: repeat(60, 0.25fr);
-  }
-
-  // TODO: mixin
-  .room-slot {
-    &--0h15m {
-      grid-column: span 1;
-    }
-
-    &--0h30m {
-      grid-column: span 2;
-    }
-
-    &--0h45m {
-      grid-column: span 3;
-    }
-
-    &--1h0m {
-      grid-column: span 4;
-    }
-
-    &--1h15m {
-      grid-column: span 5;
-    }
-
-    &--1h30m {
-      grid-column: span 6;
-    }
-
-    &--1h45m {
-      grid-column: span 7;
-    }
-
-    &--2h0m {
-      grid-column: span 8;
-    }
-
-    &--2h15m {
-      grid-column: span 9;
-    }
-
-    &--2h30m {
-      grid-column: span 10;
-    }
-    &--2h45m {
-      grid-column: span 11;
-    }
-
-    &--3h0m {
-      grid-column: span 12;
-    }
-
-    &--empty {
-      position: relative;
-      background-color: $blankColor;
-      border-radius: 2px;
-
-      &::before {
-        position: absolute;
-        content: "";
-        width: 12px;
-        height: 2px;
-        background-color: #fff;
-        left: calc(50% - 6px);
-        top: calc(50% - 1px);
-        border-radius: 2px;
+    .room {
+      &__capacity {
+        visibility: hidden;
       }
 
-      &::after {
-        position: absolute;
-        content: "";
-        width: 2px;
-        height: 12px;
-        background-color: #fff;
-        left: calc(50% - 1px);
-        top: calc(50% - 6px);
-        border-radius: 2px;
-      }
+      &__name {
+        padding: 6px 8px;
 
-      &:hover {
-        background-color: #1d54fe;
+        background-color: $blankColor;
+        border-radius: 4px;
+        box-shadow: 0 1px 8px 0 rgba(0, 44, 92, 0.28);
       }
     }
+  }
 
-    &--reserved {
-      background-color: #d5dfe9;
-
-      &:hover {
-        background-color: #99a9b9;
-      }
+  &__floor {
+    &:not(:first-of-type) {
+      margin-top: 24px;
     }
   }
 }
