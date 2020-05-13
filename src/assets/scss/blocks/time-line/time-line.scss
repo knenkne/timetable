@@ -1,5 +1,6 @@
 .time-line {
   position: sticky;
+  left: 0;
   top: 85px;
   z-index: 10;
 
@@ -17,12 +18,10 @@
   }
 
   &__stamps {
-    display: grid;
+    display: flex;
     flex: 1;
     align-items: center;
     height: 100%;
-
-    grid-template-columns: repeat(16, minmax(65px, 1fr));
   }
 
   &__stamp {
@@ -42,6 +41,8 @@
       position: absolute;
       top: 33px;
       left: 50%;
+      pointer-events: none;
+      z-index: 100;
 
       width: 0;
       height: calc(100vh - 130px);
@@ -67,6 +68,7 @@
       &::after {
         content: "";
         position: absolute;
+        top: 0;
         left: calc(50% - 50px / 2);
         z-index: -1;
 

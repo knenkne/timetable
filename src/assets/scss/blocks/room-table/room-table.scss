@@ -9,6 +9,7 @@
 
   background-color: $blankColor;
   border-right: $baseBorder;
+  background-color: red;
 
   &--float {
     position: sticky;
@@ -17,6 +18,8 @@
 
     background-color: transparent;
     border-color: transparent;
+
+    pointer-events: none;
 
     .room-table__floor:not(:first-of-type) {
       margin-top: 12px;
