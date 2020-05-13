@@ -10,52 +10,12 @@
   &__slot {
     transition: 0.3s;
 
-    &--0h15m {
-      grid-column: span 1;
-    }
-
-    &--0h30m {
-      grid-column: span 2;
-    }
-
-    &--0h45m {
-      grid-column: span 3;
-    }
-
-    &--1h0m {
-      grid-column: span 4;
-    }
-
-    &--1h15m {
-      grid-column: span 5;
-    }
-
-    &--1h30m {
-      grid-column: span 6;
-    }
-
-    &--1h45m {
-      grid-column: span 7;
-    }
-
-    &--2h0m {
-      grid-column: span 8;
-    }
-
-    &--2h15m {
-      grid-column: span 9;
-    }
-
-    &--2h30m {
-      grid-column: span 10;
-    }
-
-    &--2h45m {
-      grid-column: span 11;
-    }
-
-    &--3h0m {
-      grid-column: span 12;
+    @for $h from 0 through 3 {
+      @for $m from 0 through 3 {
+        &--#{$h}h#{$m*15}m {
+          grid-column: span ($h * 4) + ($m * 1); // минуты
+        }
+      }
     }
 
     &--empty {
