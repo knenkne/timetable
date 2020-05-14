@@ -1,11 +1,14 @@
 @import "./room-line.scss";
 
 .event-table {
+  // height: 100%;
   flex: 1;
   padding: 42px 0;
+  // background-color: red;
 
   &__floor {
     display: grid;
+    // background-color: red;
 
     grid-auto-rows: 36px;
     grid-gap: 16px 0;

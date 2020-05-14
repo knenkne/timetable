@@ -55,6 +55,12 @@
 
         transition: 0.3s;
       }
+
+      &:active {
+        background-color: #1d00fe;
+
+        transition: 0.3s;
+      }
     }
 
     &--reserved {
@@ -62,6 +68,12 @@
 
       &:hover {
         background-color: #99a9b9;
+
+        transition: 0.3s;
+      }
+
+      &:active {
+        background-color: #8594a2;
 
         transition: 0.3s;
       }

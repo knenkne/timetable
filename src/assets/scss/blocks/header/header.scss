@@ -1,17 +1,21 @@
 .site__header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  left: 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
   padding: 24px;
-  min-width: 1285px;
+  width: 100%;
+  z-index: 10;
 
   background-color: $blankColor;
-  border-bottom: $baseBorder;
+  // border-bottom: $baseBorder;
+
+  img {
+    height: 36px;
+  }
 }
 
 .create-meetup-link {
@@ -27,4 +31,10 @@
 
   background-color: $baseColor;
   border-radius: $borderRadiusM;
+}
+
+@media (max-width: 800px) {
+  .create-meetup-link {
+    display: none;
+  }
 }

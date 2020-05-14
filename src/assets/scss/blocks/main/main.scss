@@ -1,9 +1,16 @@
 .site__main {
-  position: relative;
-
-  display: flex;
   flex: 1;
-  flex-direction: column;
-  width: 100%;
-  min-width: 1285px;
+  // overflow: scroll;
+  // height: 100%;
+  // width: 100%;
+  // position: relative;
+
+  // // display: flex;
+  // // flex: 1;
+  // // flex-direction: column;
+  // height: 100%;
+  // width: 100%;
+  // overflow: scroll;
+  // overscroll-behavior: none;
+  // -webkit-overflow-scrolling: touch;
 }
