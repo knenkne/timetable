@@ -2,12 +2,13 @@
   display: grid;
 
   background-color: $blankColor;
-  cursor: pointer;
 
   grid-column: 2/-2;
   grid-template-columns: repeat(60, 0.25fr);
 
   &__slot {
+    position: relative;
+
     transition: 0.3s;
 
     @for $h from 0 through 3 {
@@ -16,6 +17,17 @@
           grid-column: span ($h * 4) + ($m * 1); // минуты
         }
       }
+    }
+
+    > .slot-widget {
+      position: absolute;
+      bottom: -120px;
+      left: calc(50% - 170px);
+      z-index: 10;
+
+      // display: none;
+
+      transition: 0.3s;
     }
 
     &--empty {
@@ -70,6 +82,12 @@
         background-color: #99a9b9;
 
         transition: 0.3s;
+
+        .slot-widget {
+          display: flex;
+
+          transition: 0.3s;
+        }
       }
 
       &:active {

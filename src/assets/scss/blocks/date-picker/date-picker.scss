@@ -1,0 +1,35 @@
+.date-picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__control {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background: #e9ecef;
+    background-image: url("/assets/img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 6px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+
+    &--left {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__date {
+    flex: 1;
+
+    font-weight: 600;
+    font-size: $fontSizeL;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    letter-spacing: 0;
+  }
+}

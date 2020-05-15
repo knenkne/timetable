@@ -1,0 +1,70 @@
+.slot-widget {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  height: 120px;
+  padding: 20px 16px;
+
+  background-color: $blankColor;
+  border-radius: 8px;
+  box-shadow: 0 1px 16px 0 rgba(0, 44, 92, 0.28);
+
+  &__title {
+    font-weight: 800;
+    font-size: $fontSizeL;
+    line-height: 24px;
+    color: $activeFontColor;
+    letter-spacing: 0;
+  }
+
+  &__info,
+  &__members p {
+    line-height: 17px;
+    font-family: $subFont;
+    color: $activeFontColor;
+    letter-spacing: 0;
+  }
+
+  &__info {
+    margin-top: 2px;
+  }
+
+  &__members {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+
+    img {
+      display: block;
+      margin-right: 8px;
+
+      border-radius: 50%;
+    }
+
+    span {
+      vertical-align: baseline;
+      color: $inactiveFontColor;
+    }
+  }
+
+  &__edit {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background: #e9ecef;
+    background-image: url("/assets/img/edit.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 11px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+}

@@ -3,7 +3,8 @@
 @import "./room.scss";
 
 .room-table {
-  position: relative;
+  z-index: 5;
+
   flex: 0 0 245px;
   box-sizing: border-box;
   padding: 21px 24px;
@@ -11,36 +12,38 @@
   background-color: $blankColor;
   border-right: $baseBorder;
 
+  pointer-events: none;
+
   &--float {
     position: sticky;
     left: 0;
 
-    // background-color: transparent;
-    // border-color: transparent;
+    background-color: transparent;
+    border-color: transparent;
 
     .room-table__floor:not(:first-of-type) {
-      // margin-top: 12px;
+      margin-top: 12px;
     }
 
     .floor-table__room:not(:first-of-type) {
-      // margin-top: 4px;
+      margin-top: 4px;
     }
 
     .floor__name {
-      // visibility: hidden;
+      visibility: hidden;
     }
 
     .room {
       &__capacity {
-        // visibility: hidden;
+        visibility: hidden;
       }
 
       &__name {
-        // padding: 6px 8px;
+        padding: 6px 8px;
 
-        // background-color: $blankColor;
-        // border-radius: 4px;
-        // box-shadow: 0 1px 8px 0 rgba(0, 44, 92, 0.28);
+        background-color: $blankColor;
+        border-radius: 4px;
+        box-shadow: 0 1px 8px 0 rgba(0, 44, 92, 0.28);
       }
     }
   }

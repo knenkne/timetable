@@ -3,10 +3,10 @@
   top: 84px;
   left: 0;
   z-index: 10;
-  float: left;
 
   display: flex;
   align-items: center;
+  float: left;
   width: 100%;
   width: 100%;
   min-width: 1285px;
@@ -16,9 +16,9 @@
   border-top: $baseBorder;
   border-bottom: $baseBorder;
 
-  &__date {
+  &__date-picker {
     flex: 0 0 245px;
-    width: 245px;
+    padding: 0 24px;
     height: 100%;
   }
 
@@ -33,13 +33,9 @@
     position: relative;
 
     flex: 1;
-    height: 20px;
 
-    font-weight: $fontWeightXL;
-    font-size: $fontSizeS;
-    line-height: 20px;
+    vertical-align: middle;
     text-align: center;
-    color: $subFontColor;
 
     &::before {
       content: "";
@@ -48,43 +44,61 @@
       left: 50%;
 
       width: 0;
-      height: 100vh;
+      height: calc(100vh - 130px);
 
       border-left: 1px solid rgba(19, 100, 205, 0.1);
     }
 
     &--inactive {
-      color: $inactiveFontColor;
+      .time-line__number {
+        color: $inactiveFontColor;
+      }
     }
 
     &--active {
-      color: $baseFontColor;
+      .time-line__number {
+        color: $baseFontColor;
+      }
 
       &::before {
         top: 20px;
 
+        height: calc(100vh - 117px);
+
         border-color: $baseColor;
       }
 
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: calc(50% - 50px / 2);
-        z-index: -1;
-
+      .time-line__number {
+        display: inline-block;
         width: 50px;
-        height: 100%;
+
+        vertical-align: middle;
 
         background-color: $baseColor;
         border-radius: $borderRadiusXL;
       }
+
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: calc(50% - 50px / 2);
+      //   z-index: -1;
+
+      //   width: 50px;
+      //   height: 100%;
+
+      //   background-color: $baseColor;
+      //   border-radius: $borderRadiusXL;
+      // }
     }
   }
 
-  &__row {
-    background-color: #d5dfe9;
-
-    grid-column: 1/-1;
+  &__number {
+    font-weight: $fontWeightXL;
+    font-size: $fontSizeS;
+    line-height: 20px;
+    text-align: center;
+    color: $subFontColor;
   }
 }
