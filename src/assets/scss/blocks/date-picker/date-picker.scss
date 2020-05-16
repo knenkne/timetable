@@ -4,21 +4,32 @@
   align-items: center;
 
   &__control {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 24px;
     height: 24px;
 
-    background: #e9ecef;
-    background-image: url("/assets/img/arrow.svg");
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 6px;
     border: none;
-    border-radius: 100px;
+    border-radius: 50%;
     cursor: pointer;
 
-    &--left {
+    svg {
+      path {
+        fill: #848687;
+      }
+    }
+
+    &--right {
       transform: rotate(180deg);
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill: #000000;
+        }
+      }
     }
   }
 

@@ -14,13 +14,12 @@
   &::before {
     content: "";
     position: absolute;
+    top: -8px;
+    left: calc(50% - 8px);
 
     box-sizing: border-box;
     width: 16px;
     height: 16px;
-
-    top: -8px;
-    left: calc(50% - 8px);
 
     border-top: solid 8px $blankColor;
     border-right: solid 8px transparent;
@@ -77,13 +76,22 @@
     width: 24px;
     height: 24px;
 
-    background: #e9ecef;
-    background-image: url("/assets/img/edit.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 11px;
     border: none;
-    border-radius: 100px;
+    border-radius: 50%;
     cursor: pointer;
+
+    svg {
+      path {
+        fill: #848687;
+      }
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill: #000000;
+        }
+      }
+    }
   }
 }
