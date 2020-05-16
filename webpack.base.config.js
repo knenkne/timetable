@@ -18,8 +18,7 @@ module.exports = {
   },
   output: {
     filename: `${PATHS.assets}js/[name].js`,
-    path: PATHS.dist,
-    publicPath: '/'
+    path: PATHS.dist
   },
   module: {
     rules: [{
@@ -29,14 +28,14 @@ module.exports = {
     },
     {
       test: /\.(png|jpg|jpeg|svg)$/,
-      loader: 'file-loader',
+      loader: 'url-loader',
       options: {
         name: '[name].[ext]'
       }
     },
     {
       test: /\.(woff)$/,
-      loader: 'file-loader',
+      loader: 'url-loader',
       options: {
         name: '[name].[ext]'
       }

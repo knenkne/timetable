@@ -1,12 +1,29 @@
-@import "./utils/fonts.scss";
-@import "./utils/reset.scss";
-@import "./utils/vars.scss";
-@import "./common.scss";
-@import "./blocks/header/header.scss";
-@import "./blocks/main/main.scss";
-@import "./blocks/time-line/time-line.scss";
-@import "./blocks/date-picker/date-picker.scss";
-@import "./blocks/time-board/time-board.scss";
-@import "./blocks/room-table/room-table.scss";
-@import "./blocks/event-table/event-table.scss";
-@import "./blocks/slot-widget/slot-widget.scss";
+@import "utils/reset.scss";
+@import "utils/vars.scss";
+@import "common.scss";
+@import "blocks/header/header.scss";
+@import "blocks/main/main.scss";
+@import "blocks/time-line/time-line.scss";
+@import "blocks/date-picker/date-picker.scss";
+@import "blocks/time-board/time-board.scss";
+@import "blocks/room-table/room-table.scss";
+@import "blocks/event-table/event-table.scss";
+@import "blocks/slot-widget/slot-widget.scss";
+
+@font-face {
+  font-family: "Helvetica-Neue";
+  font-weight: 400;
+  src: url("../fonts/HelveticaNeue/HelveticaNeue-Roman.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica-Neue";
+  font-weight: 600;
+  src: url("../fonts/HelveticaNeue/HelveticaNeue-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Helvetica-Neue";
+  font-weight: 800;
+  src: url("../fonts/HelveticaNeue/HelveticaNeue-Bold.woff") format("woff");
+}
