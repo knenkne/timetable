@@ -11,6 +11,25 @@
   border-radius: 8px;
   box-shadow: 0 1px 16px 0 rgba(0, 44, 92, 0.28);
 
+  &::before {
+    content: "";
+    position: absolute;
+
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+
+    top: -8px;
+    left: calc(50% - 8px);
+
+    border-top: solid 8px $blankColor;
+    border-right: solid 8px transparent;
+    border-bottom: solid 8px transparent;
+    border-left: solid 8px $blankColor;
+    border-top-left-radius: 4px;
+    transform: rotate(45deg);
+  }
+
   &__title {
     font-weight: 800;
     font-size: $fontSizeL;

@@ -9,6 +9,8 @@
   &__slot {
     position: relative;
 
+    cursor: pointer;
+
     transition: 0.3s;
 
     @for $h from 0 through 3 {
@@ -25,7 +27,9 @@
       left: calc(50% - 170px);
       z-index: 10;
 
-      // display: none;
+      display: none;
+
+      cursor: default;
 
       transition: 0.3s;
     }
