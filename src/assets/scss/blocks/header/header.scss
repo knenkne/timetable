@@ -2,16 +2,16 @@
   position: sticky;
   top: 0;
   left: 0;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px;
-  width: 100%;
   z-index: 10;
 
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24px;
+
   background-color: $blankColor;
-  // border-bottom: $baseBorder;
 
   img {
     height: 36px;
@@ -19,6 +19,8 @@
 }
 
 .create-meetup-link {
+  position: relative;
+
   display: block;
   width: 140px;
   height: 36px;
@@ -31,6 +33,8 @@
 
   background-color: $baseColor;
   border-radius: $borderRadiusM;
+
+  @include focus-outline($borderRadiusM);
 }
 
 @media (max-width: 800px) {

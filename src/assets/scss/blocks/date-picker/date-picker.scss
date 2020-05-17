@@ -4,16 +4,20 @@
   align-items: center;
 
   &__control {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
     width: 24px;
     height: 24px;
 
+    background-color: #e9ecef;
     border: none;
     border-radius: 50%;
-    background-color: #e9ecef;
     cursor: pointer;
+
+    @include focus-outline(50%);
 
     svg {
       display: block;
@@ -26,7 +30,8 @@
       transform: rotate(180deg);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       svg {
         path {
           fill: #000000;

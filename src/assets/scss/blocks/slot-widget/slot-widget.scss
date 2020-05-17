@@ -68,15 +68,13 @@
   }
 
   &__edit {
-    display: flex;
-    flex-direction: center;
-    align-items: center;
     position: absolute;
     top: 8px;
     right: 8px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 24px;
     height: 24px;
 
@@ -89,14 +87,17 @@
 
     svg {
       display: block;
-      path {
+
+      path,
+      polygon {
         fill: #848687;
       }
     }
 
     &:hover {
       svg {
-        path {
+        path,
+        polygon {
           fill: #000000;
         }
       }
