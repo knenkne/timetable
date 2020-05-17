@@ -12,6 +12,7 @@
     grid-auto-rows: 36px;
     grid-gap: 16px 0;
     grid-template-columns: 0.5fr repeat(15, minmax(65px, 1fr)) 0.5fr;
+
     &:not(:first-of-type) {
       margin-top: 45px;
     }

@@ -25,6 +25,8 @@
       height: 100%;
 
       border: 1px solid #1d54fe;
+
+      // border-radius: 3px;
       outline: none;
       -webkit-box-shadow: 0 0 5px #1d54fe;
       box-shadow: 0 0 5px #1d54fe;
@@ -61,7 +63,11 @@
       position: relative;
 
       background-color: $blankColor;
-      border-radius: 3px;
+      border-radius: 2px;
+
+      &:focus::before {
+        border-radius: 2px;
+      }
 
       &::after {
         content: "";

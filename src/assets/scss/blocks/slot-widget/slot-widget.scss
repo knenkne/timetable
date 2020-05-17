@@ -68,19 +68,27 @@
   }
 
   &__edit {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
     position: absolute;
     top: 8px;
     right: 8px;
 
-    display: block;
+    display: flex;
+    justify-content: space-between;
     width: 24px;
     height: 24px;
 
+    background-color: #e9ecef;
     border: none;
     border-radius: 50%;
     cursor: pointer;
 
+    -webkit-appearance: none;
+
     svg {
+      display: block;
       path {
         fill: #848687;
       }

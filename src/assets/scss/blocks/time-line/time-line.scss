@@ -41,7 +41,7 @@
       content: "";
       position: absolute;
       top: 33px;
-      left: 50%;
+      left: calc(50% - 0.5px);
 
       width: 0;
       height: calc(100vh - 130px);
