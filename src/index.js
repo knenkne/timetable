@@ -1,16 +1,41 @@
 import './assets/scss/index.scss'
 
 const roomTable = document.querySelector('.room-table')
-const slots = document.querySelectorAll('.slot--reserved .slot__button')
+const slots = document.querySelectorAll('.slot')
 
 document.querySelector('.site').addEventListener('scroll', () => {
   roomTable.classList.toggle('room-table--float', document.querySelector('.site').scrollLeft + 1 >= roomTable.getBoundingClientRect().width)
 })
 
-for (const slot of slots) {
-  const widget = slot.nextElementSibling
-  const editButton = widget.querySelector('.slot-widget__edit')
+const hideWidget = (slot) => {
+  const widget = slot.querySelector('.slot-widget')
 
-  slot.addEventListener('focus', () => widget.classList.remove('hidden'))
-  editButton.addEventListener('blur', () => widget.classList.add('hidden'))
+  if (widget) {
+    widget.classList.add('hidden')
+  }
 }
+
+slots.forEach((slot) => {
+  const slotButton = slot.querySelector('.slot__button')
+  const widget = slotButton.nextElementSibling
+
+  slotButton.addEventListener('focus', () => {
+    if (widget) {
+      widget.classList.remove('hidden')
+    }
+
+    if (slot.nextElementSibling) {
+      hideWidget(slot.nextElementSibling)
+    }
+
+    if (slot.previousElementSibling) {
+      hideWidget(slot.previousElementSibling)
+    }
+  })
+
+  slotButton.addEventListener('blur', (e) => {
+    if (widget && document.activeElement !== widget.querySelector('.slot-widget__button')) {
+      widget.classList.remove('hidden')
+    }
+  })
+})

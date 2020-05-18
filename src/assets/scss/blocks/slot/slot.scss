@@ -5,6 +5,12 @@
 
   transition: 0.3s;
 
+  &:hover {
+    .slot-widget.hidden {
+      display: flex !important;
+    }
+  }
+
   @for $h from 0 through 3 {
     @for $m from 0 through 3 {
       &--#{$h}h#{$m*15}m {
@@ -18,6 +24,8 @@
     bottom: -120px;
     left: calc(50% - 170px);
     z-index: 10;
+
+    // display: none;
 
     cursor: default;
 
@@ -82,6 +90,20 @@
         background-color: #99a9b9;
 
         transition: 0.3s;
+
+        // + .slot-widget {
+        //   display: flex;
+
+        //   transition: 0.3s;
+        // }
+      }
+
+      &:focus {
+        + .slot-widget {
+          // display: flex;
+
+          transition: 0.3s;
+        }
       }
 
       &:active {
