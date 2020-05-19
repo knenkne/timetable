@@ -5,6 +5,19 @@
 
   transition: 0.3s;
 
+  &:first-child {
+    > .slot-widget {
+      left: -20px;
+    }
+  }
+
+  &:last-child {
+    > .slot-widget {
+      left: auto;
+      right: -20px;
+    }
+  }
+
   &:hover {
     .slot-widget.hidden {
       display: flex !important;
@@ -101,7 +114,6 @@
       &:focus {
         + .slot-widget {
           // display: flex;
-
           transition: 0.3s;
         }
       }

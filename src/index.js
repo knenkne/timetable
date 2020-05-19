@@ -17,7 +17,8 @@ const hideWidget = (slot) => {
 
 slots.forEach((slot) => {
   const slotButton = slot.querySelector('.slot__button')
-  const widget = slotButton.nextElementSibling
+  const widget = slot.querySelector('.slot-widget')
+  const editButton = widget ? widget.querySelector('.slot-widget__edit') : null
 
   slotButton.addEventListener('focus', () => {
     if (widget) {
@@ -34,8 +35,16 @@ slots.forEach((slot) => {
   })
 
   slotButton.addEventListener('blur', (e) => {
-    if (widget && document.activeElement !== widget.querySelector('.slot-widget__button')) {
-      widget.classList.remove('hidden')
+    if (widget && e.relatedTarget !== editButton) {
+      widget.classList.add('hidden')
     }
   })
+
+  if (widget) {
+    editButton.addEventListener('blur', (e) => {
+      if (widget && e.relatedTarget !== widget.editButton) {
+        widget.classList.add('hidden')
+      }
+    })
+  }
 })
