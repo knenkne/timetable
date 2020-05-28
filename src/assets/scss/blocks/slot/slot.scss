@@ -13,8 +13,8 @@
 
   &:last-child {
     > .slot-widget {
-      left: auto;
       right: -20px;
+      left: auto;
     }
   }
 
@@ -63,6 +63,7 @@
       background-color: $blankColor;
       border-radius: 2px;
 
+      @include focus-outline(2px);
       &::after {
         content: "";
         position: absolute;
